@@ -96,3 +96,19 @@ var h1 = document.querySelector('header h1');
 console.log(newDiv);
 newDiv.style.fontSize = '30px';
 container.insertBefore(newDiv, h1);
+
+// createElement
+var newLi = document.createElement('li');
+// Add class 
+newLi.className = "list-group-item";
+// Add id
+newLi.id = 'newli1';
+
+// create text li node
+var newLiText = document.createTextNode('Hello world');
+// Add text to li
+newLi.appendChild(newLiText);
+console.log(newLi);
+var newLitag = document.querySelector('.list-group');
+var li = document.querySelector('#l1');
+newLitag.insertBefore(newLi, li);
