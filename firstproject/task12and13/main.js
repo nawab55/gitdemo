@@ -32,16 +32,22 @@ function showUserOnScreen(obj){
 
     // Add text node with input values
     li.appendChild(document.createTextNode(`${nameInput.value}: ${emailInput.value}`));
-    // Append to ul
-    userList.appendChild(li);
-
+    
     // create a input button
-  const btn = document.createElement('input');
-  btn.id = 'button';
-  
-  btn.setAttribute('type', "button");
-  btn.setAttribute('value', "Delete");
-  li.appendChild(btn);
+  const deleteButton = document.createElement('input');
+  deleteButton.id = 'button';
+  // deleteButton.setAttribute('type', "button");
+  // btn.setAttribute('value', "Delete");
+  deleteButton.type = "button";
+  deleteButton.value = "Delete";
+  deleteButton.onclick = () => {
+    localStorage.removeItem(obj.email);
+    userList.removeChild(li);
+  }
+  li.appendChild(deleteButton);
+  // Append to ul
+  userList.appendChild(li);
+
   
 
     // Clear fields
